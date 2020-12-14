@@ -1,9 +1,11 @@
 import 'package:dsi_app/constants.dart';
-import 'package:dsi_app/home.dart';
+import 'package:dsi_app/forgot_password.dart';
 import 'package:dsi_app/infra.dart';
 import 'package:dsi_app/register.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'home.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -23,7 +25,7 @@ class LoginPage extends StatelessWidget {
             padding: Constants.paddingMedium,
             child: Text(
               'App desenvolvido por Gabriel Alves para a disciplina de'
-              ' Desenvolvimento de Sistemas de Informação do BSI/UFRPE.',
+                  ' Desenvolvimento de Sistemas de Informação do BSI/UFRPE.',
               style: Theme.of(context).textTheme.caption.copyWith(fontSize: 12),
             ),
           )
@@ -44,23 +46,22 @@ class LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
 
   void _forgotPassword() {
-    dsiDialog.showInfo(
-      context: context,
-      title: 'Warning',
-      message: '''Falta implementar esta função.\n'''
-          '''Agora é com você:\n'''
-          '''Implemente uma tela para esta funcionalidade!''',
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
     );
   }
 
   void _login() {
     if (!_formKey.currentState.validate()) return;
-
     dsiHelper.go(context, HomePage());
   }
 
   void _register() {
-    dsiHelper.go(context, RegisterPage());
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => RegisterPage()),
+    );
   }
 
   @override
