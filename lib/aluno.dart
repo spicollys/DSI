@@ -74,18 +74,7 @@ class ListAlunoPageState extends State<ListAlunoPage> {
           message: '${aluno.nome} foi removido.',
         );
       },
-      background: Container(
-        color: Colors.red,
-        child: Row(
-          children: <Widget>[
-            Constants.spaceSmallWidth,
-            Icon(Icons.delete, color: Colors.white),
-            Spacer(),
-            Icon(Icons.delete, color: Colors.white),
-            Constants.spaceSmallWidth,
-          ],
-        ),
-      ),
+      background: DsiListTileBackground(),
       child: ListTile(
         title: Text(aluno.nome),
         subtitle: Column(

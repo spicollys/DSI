@@ -109,10 +109,7 @@ class DsiScaffold extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.school),
             title: Text('Professores'),
-            onTap: () => dsiHelper.showMessage(
-              context: context,
-              message: 'Falta implementar.',
-            ),
+            onTap: () => dsiHelper.go(context, '/list_professor'),
           ),
           Divider(),
           ListTile(
@@ -246,6 +243,24 @@ class DsiBasicFormPageState<T> extends State<DsiBasicFormPage> {
           onPressed: () => dsiHelper.back(context),
         ),
       ],
+    );
+  }
+}
+
+class DsiListTileBackground extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.red,
+      child: Row(
+        children: <Widget>[
+          Constants.spaceSmallWidth,
+          Icon(Icons.delete, color: Colors.white),
+          Spacer(),
+          Icon(Icons.delete, color: Colors.white),
+          Constants.spaceSmallWidth,
+        ],
+      ),
     );
   }
 }
