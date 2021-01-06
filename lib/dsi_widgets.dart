@@ -443,3 +443,20 @@ class DsiListPageState<E, T extends StatefulWidget> extends State<T> {
     );
   }
 }
+class DsiListTileBackground extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.red,
+      child: Row(
+        children: <Widget>[
+          Constants.boxSmallWidth,
+          Icon(Icons.delete, color: Colors.white),
+          Spacer(),
+          Icon(Icons.delete, color: Colors.white),
+          Constants.boxSmallWidth,
+        ],
+      ),
+    );
+  }
+}
