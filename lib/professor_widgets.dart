@@ -1,4 +1,5 @@
 import 'package:dsi_app/pessoa.dart';
+import 'package:dsi_app/pessoa_widgets.dart';
 import 'package:dsi_app/professor.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,7 @@ class MaintainProfessorPage extends StatelessWidget {
     }
     return DsiBasicFormPage(
       title: 'Professor',
-      onSave: (){
+      onSave: (context){
         professorController.save(professor).then((value) {
           dsiHelper.go(context, '/list_professor');}
         );
@@ -53,7 +54,7 @@ class MaintainProfessorPage extends StatelessWidget {
         alignment: WrapAlignment.center,
         runSpacing: Constants.boxSmallHeight.height,
         children: <Widget>[
-
+          MaintainPessoaBody(professor.pessoa),
           TextFormField(
             keyboardType: TextInputType.text,
             decoration: InputDecoration(labelText: 'Departamento*'),
