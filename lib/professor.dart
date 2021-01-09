@@ -23,7 +23,7 @@ class ProfessorController {
   CollectionReference professores;
 
   ProfessorController() {
-    professores = FirebaseFirestore.instance.collection('alunos');
+    professores = FirebaseFirestore.instance.collection('professores');
   }
 
   DocumentReference getRef(String id) {
